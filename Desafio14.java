@@ -1,6 +1,5 @@
-import java.util.List;
 import java.util.function.Predicate;
-import java.util.Comparator;
+import java.util.List;
 
 public class Desafio14 {
 	public static void solucao(List<Integer> l) {
@@ -20,7 +19,6 @@ public class Desafio14 {
 
 		System.out.print("O maior número primo da lista: ");
 	    l.stream()
-	 	 .distinct()
 		 .filter(ePrimo)
 		 .max(Integer::compare)
 		 .ifPresent(System.out::print);

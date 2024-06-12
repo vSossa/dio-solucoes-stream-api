@@ -5,7 +5,7 @@ public class Desafio03 {
 		System.out.println("S03 -------------------------");
 		System.out.println("Os valores são todos positivos? " + 
 						   l.stream()
-						    .allMatch((n) -> (n > 0)));
+						    .anyMatch((n) -> (n < 0)));
 		System.out.printf("----------------------------%n%n");
 	}
 }

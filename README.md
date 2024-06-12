@@ -1,4 +1,12 @@
 # Minhas soluções para todos os desafios abaixo
+___
+## Uso rápido
+```console
+./build -h
+```
+O comando acima mostrará uma mensagem de uso para como pensei que o programa deveria ser utilizado.
+___
+## Enunciado dos desafios
 **Para todos os desafios, utilizem a lista de números inteiros fornecida**:
 
 ```java

@@ -9,7 +9,7 @@ public class Desafio08 {
 							.map(n -> Integer.toString(n))
 							.map(s -> Arrays.asList(s.split(""))
 										    .stream()
-										    .map(d -> Integer.parseInt(d))
+										    .map(Integer::parseInt)
 										    .reduce(0, (n1, n2) -> (n1 + n2)))
 							.reduce(0, (n1, n2) -> (n1 + n2)));
 		System.out.printf("----------------------------%n%n");
