@@ -5,16 +5,17 @@ public class Main {
 	static final List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 4, 3);
 	public static void main(String[] args) {
 		final int len = args.length;
-		if (len == 0 ||
-			(len == 1 && args[0].equals("-h")) ||
-			(len == 1 && args[0].equals("--help"))) {
+		if (len == 0) {
+			System.out.printf("ERROR: expected at least one argument%n");	
+			System.out.printf("TIP: do `./build -h` or `./build --help` for help%n"); 
+		} else if ((len == 1 && args[0].equals("-h")) || 
+                   (len == 1 && args[0].equals("--help"))) {
 			usage();
 		} else if ((len == 1 && args[0].equals("-a")) ||
 			       (len == 1 && args[0].equals("--all"))) {
 			runAll();
 		} else {
-			int[] indexes = init(args, len);
-			runEach(indexes, len);
+			runEach(args, len);
 		}
 	}
 
@@ -40,7 +41,9 @@ public class Main {
 		return array;
 	}
 
-	public static void runEach(int[] indexes, int len) {
+	public static void runEach(String[] args, int len) {
+		int[] indexes = init(args, len);
+
 		int j = 0;
 		while (j < len) {
 			switch (indexes[j]) {
