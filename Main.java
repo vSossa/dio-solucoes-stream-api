@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 public class Main {
 	static final List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 4, 3);
+
 	public static void main(String[] args) {
 		final int len = args.length;
 		if (len == 0) {
@@ -26,14 +27,13 @@ public class Main {
 				array[i] = Integer.parseInt(indexes[i]);
 			} catch (NumberFormatException e) {
 				System.out.printf("ERROR: %d-argument is not an integer: `%s`%n",
-								  i, indexes[i]);
+								  (i + 1), indexes[i]);
 				System.exit(1);
 			}
 
 			if (array[i] < 1 || array[i] > 19) {
-				usage();
 				System.out.printf("ERROR: %d-argument is not a valid integer: `%d`%n",
-								  i, array[i]);
+								  (i + 1), array[i]);
 				System.exit(1);
 			}
 		}
